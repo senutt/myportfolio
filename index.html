@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./src/output.css" rel="stylesheet">
+  <title>Portfolio</title>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+</head>
+
+<body>
+
+  <!-- Header Start -->
+  <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <div class="container">
+      <div class="flex items-center justify-between relative">
+        <div class="p-4">
+          <a href="#home" class="block py-6 text-lg font-bold text-primary">Wisnu Hidayat</a>
+        </div>
+        <div class="flex items-center p-4">
+          <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 md:hidden">
+            <span class="hamburger-line transition duration-300 origin-top-left"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line transition duration-300 origin-bottom-left"></span>
+          </button>
+
+          <nav id="nav-menu"
+            class="hidden absolute py-3 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full  md:block md:static md:bg-transparent md:max-w-full md:shadow-none md:rounded-none md:dark:bg-transparent">
+            <ul class="block md:flex">
+              <li class="group">
+                <a href="#home"
+                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Beranda</a>
+              </li>
+              <li class="group">
+                <a href="#about"
+                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang Saya</a>
+              </li>
+              <li class="group">
+                <a href="#project"
+                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Project</a>
+              </li>
+              <li class="group">
+                <a href="#certificates"
+                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white ">Sertifikasi</a>
+              </li>
+              <li class="group">
+                <a href="#contact"
+                  class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white ">Kontak</a>
+              </li>
+              <li class="mt-3 flex items-center pl-8 lg:mt-0">
+                <div class="flex">
+                  <span class="mr-2 text-sm text-slate-500 dark:text-white">light</span>
+                  <input type="checkbox" class="hidden" id="dark-toggle" />
+                  <label for="dark-toggle">
+                    <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                      <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                      </div>
+                    </div>
+                  </label>
+                  <span class="ml-2 text-sm text-slate-500 dark:text-white">dark</span>
+                </div>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Header End -->
+
+  <!-- Hero Section Start -->
+  <section id="hero" class="pt-28 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="w-full self-center px-6 md:w-1/2">
+          <h1 class="text-base font-semibold text-secondary md:text-xl">Hai, Saya <span
+              class="mt-1 block text-3xl font-bold text-dark dark:text-white lg:text-4xl">Ahmad Wisnu Hidayat</span>
+          </h1>
+          <h2 class="my-3 text-lg font-medium text-primary lg:text-2xl">IT Support & <span
+              class="text-secondary dark:text-white">Front-End Web Developer</span></h2>
+          <p class="mb-10 text-secondary font-medium leading-relaxed">Kembangkan dirimu, hadapi tantangan, dan raih
+            potensi penuhmu.</p>
+
+          <a href="#contact"
+            class="rounded-full bg-primary py-3 px-8 text-base font-semibold text-white transition duration-500 ease-in-out hover:opacity-75 hover:shadow-lg">Hubungi
+            Saya</a>
+        </div>
+        <div class="w-full self-end px-5 lg:w-1/2">
+          <div class="relative mt-10 lg:right-0 lg:mt-9">
+            <img src="./src/images/wisnu.png" alt="Ahmad Wisnu Hidayat" class="relative z-10 mx-auto max-w-full" />
+            <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+              <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#a8a29e"
+                  d="M49.2,-57.2C65.2,-45.3,80.5,-31.1,85.3,-13.6C90.2,3.9,84.5,24.7,72.4,38.1C60.3,51.5,41.7,57.4,22.8,65.4C4,73.4,-15,83.4,-30.3,79.5C-45.7,75.6,-57.4,57.7,-63.8,40C-70.1,22.3,-71.2,4.8,-69.6,-13.7C-68,-32.1,-63.7,-51.5,-51.7,-64.1C-39.6,-76.7,-19.8,-82.6,-1.6,-80.7C16.6,-78.8,33.3,-69.1,49.2,-57.2Z"
+                  transform="translate(100 100) scale(0.9)" />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Hero Section End -->
+
+  <!-- About Section Start -->
+  <section id="about" class="py-28 bg-gray-200 dark:bg-dark">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="mb-10 w-full px-4 md:w-3/5">
+          <h4 class="mb-10 text-lg font-bold text-primary">Tentang Saya</h4>
+          <p class="text-base text-secondary leading-relaxed font-medium text-justify lg:text-lg">
+            Saya adalah fresh graduate dari Institut Agama Islam Negeri Kudus Fakultas Tarbiyah. Saya memiliki minat dan
+            keahlian dalam troubleshooting, pemecahan masalah perangkat keras dan lunak, serta pemrograman web dengan
+            HTML, CSS, dan JavaScript.<br />Saya telah mengikuti berbagai pelatihan gratis yang disediakan oleh platform
+            pembelajaran online, di mana saya memperdalam pemahaman saya baik dalam IT Support maupun Front-End
+            Development. Meskipun belum memiliki pengalaman magang atau proyek formal, saya aktif belajar secara mandiri
+            dan mengikuti perkembangan terbaru dalam teknologi.<br />
+            Di waktu luang, saya suka mengutak-atik komputer baik perangkat keras maupun lunak dan mempelajari
+            teknologi terbaru serta membuat proyek pribadi demi mengasah kemampuan saya.
+          </p>
+        </div>
+        <div id="project" class="w-full h-full px-4 carousel relative overflow-hidden md:w-2/5">
+          <h4 class="mb-5 text-lg text-center font-bold text-primary">Project Pribadi</h4>
+
+          <!-- Tombol navigasi -->
+          <button
+            class="absolute left-5 top-1/2 transform -translate-y-1/2  text-secondary px-2 py-1 md:px-4 md:py-2 rounded-full opacity-75 hover:opacity-100 z-10 dark:text-white"
+            onclick="changeSlide(-1)">&#10094;</button>
+          <button
+            class="absolute right-5 top-1/2 transform -translate-y-1/2 text-secondary px-2 py-1 md:px-4 md:py-2 rounded-full opacity-75 hover:opacity-100 z-10 dark:text-white"
+            onclick="changeSlide(1)">&#10095;</button>
+
+          <!-- Daftar slide -->
+          <div class="carousel-inner relative w-full h-96 overflow-hidden">
+            <div class="carousel-item absolute w-full h-full transition-opacity duration-500 ease-in-out">
+              <img src="./src/images/proyek/qawaa1.jpg" alt="Gambar 1" class="w-auto h-full mx-auto object-contain">
+            </div>
+            <div class="carousel-item absolute w-full h-full transition-opacity duration-500 ease-in-out opacity-0">
+              <img src="./src/images/proyek/qawaa2.jpg" alt="Gambar 2" class="w-auto h-full mx-auto object-contain">
+            </div>
+            <div class="carousel-item absolute w-full h-full transition-opacity duration-500 ease-in-out opacity-0">
+              <img src="./src/images/proyek/qawaa3.jpg" alt="Gambar 3" class="w-auto h-full mx-auto object-contain">
+            </div>
+            <div class="carousel-item absolute w-full h-full transition-opacity duration-500 ease-in-out opacity-0">
+              <img src="./src/images/proyek/qawaa4.jpg" alt="Gambar 3" class="w-auto h-full mx-auto object-contain">
+            </div>
+            <div class="carousel-item absolute w-full h-full transition-opacity duration-500 ease-in-out opacity-0">
+              <img src="./src/images/proyek/qawaa5.jpg" alt="Gambar 3" class="w-auto h-full mx-auto object-contain">
+            </div>
+          </div>
+          <h4 class="mt-5 text-lg text-center font-bold text-secondary">Qawaa</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Section End -->
+
+  <!-- Certificate Section Start -->
+  <section id="certificates" class="py-28 dark:bg-slate-800">
+    <div class="container">
+      <div class="w-full px-2">
+        <h2 class="mb-4 text-2xl font-bold dark:text-white md:text-3xl text-primary text-center">Sertifikasi</h2>
+      </div>
+      <div class="flex flex-row w-full py-5 overflow-auto md:overflow-visible">
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://www.coursera.org/account/accomplishments/certificate/D4ZYYF9UAF4D" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/Dasar-dasar Dukungan Teknis.png" class="w-40 mb-2 justify-center" />
+            Dasar-dasar Dukungan
+            Teknis</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://www.coursera.org/account/accomplishments/certificate/7GDXLGBQU426" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/Seluk Beluk Jaringan Komputer.png" class="w-40 mb-2 justify-center" />
+            Seluk-beluk Jaringan Komputer</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://www.coursera.org/account/accomplishments/certificate/WA5MLET2TZ9N" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/Sistem Operasi dan Anda- MenjadiPengguna yang berdaya.png"
+              class="w-40 mb-2 justify-center" />
+            Sistem Informasi dan Anda: Menjadi Pengguna yang Berdaya</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://www.dicoding.com/certificates/QLZ9282YEX5D" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/Dicoding Dasar Pemrograman.png" class="w-40 mb-2 justify-center" />
+            Dasar-dasar Pemrograman Web</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://www.dicoding.com/certificates/QLZ9282YEX5D" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/Dicoding Javascript.png" class="w-40 mb-2 justify-center" />
+            Belajar Dasar Pemrograman JavaScript</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://freecodecamp.org/certification/Nutsugly/responsive-web-design" target="_blank"
+            class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/FreecodeCamp Responsive Web Design.png" class="w-40 mb-2 justify-center" />
+            Responsive Web Design</a>
+        </div>
+        <div class="flex justify-center items-start mx-2">
+          <a href="https://freecodecamp.org/certification/Nutsugly/javascript-algorithms-and-data-structures"
+            target="_blank" class="text-center w-40 text-base font-semibold dark:text-white"><img
+              src="./src/images/sertifikat/FreecodeCamp javascript.png" class="w-40 mb-2 justify-center" />
+            JavaScript Algorithms and Data Structures</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Certificate Section End -->
+
+  <!-- Contact Footer Start -->
+  <footer id="contact" class="py-12 bg-gray-200 dark:bg-zinc-700">
+    <div class="container">
+      <div class="w-full px-4">
+        <div class="mx-auto mb-14 max-w-xl text-center">
+          <h2 class="mb-4 text-2xl font-bold dark:text-white md:text-3xl text-primary">Hubungi Saya</h2>
+          <p class="text-md font-medium text-secondary md:text-lg dark:text-white">Anda dapat menjangkau saya melalui
+            cara berikut</p>
+        </div>
+        <div class="flex flex-wrap w-full h-36 items-center justify-center">
+          <!-- Instagram -->
+          <a href="https://instagram.com/wisnuhid_" target="_blank"
+            class="mx-2 flex h-10 w-32 items-center justify-around rounded-full border border-slate-500 text-slate-500 hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>Instagram</title>
+              <path
+                d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z" />
+            </svg>wisnuhid_
+          </a>
+          <a href="https://www.linkedin.com/in/ahmad-wisnu-hidayat-b55977164/" target="_blank"
+            class="mx-2 flex h-10 w-52 items-center justify-around rounded-full border border-slate-500 text-slate-500 hover:border-primary hover:bg-primary hover:text-white">
+            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <title>LinkedIn</title>
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+            Ahmad Wisnu Hidayat
+          </a>
+          <a href="mailto:wisnuh912@gmail.com" target="_blank"
+            class="mx-2 h-10 w-48 flex items-center justify-center rounded-full border border-slate-500 text-slate-500 hover:border-primary hover:bg-primary hover:text-white">wisnuh912@gmail.com</a>
+        </div>
+        <p class="text-center text-xs font-medium text-slate-500">
+          Dibuat oleh <a href="https://instagram.com/wisnuhid_target=" _blank" class="font-bold text-primary">Ahmad
+            Wisnu Hidayat</a>, menggunakan
+          <a href="https://tailwindcss.com" target="_blank" class="font-bold text-sky-500">Tailwind CSS</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Contact Footer End -->
+
+  <script src="./src/scripts/index.js">
+  </script>
+
+
+</body>
+
+</html>
